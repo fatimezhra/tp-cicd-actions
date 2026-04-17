@@ -26,6 +26,9 @@ jobs:
       - name: Installer les dépendances
         run: npm install --legacy-peer-deps
 
+      - name: Fix permissions
+        run: chmod -R +x node_modules/.bin
+
       - name: Lancer le linting
         run: npx eslint src/
 
