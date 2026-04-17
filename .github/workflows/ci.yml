@@ -27,7 +27,7 @@ jobs:
         run: npm install --legacy-peer-deps
 
       - name: Lancer le linting
-        run: npm run lint
+        run: npx eslint src/
 
       - name: Lancer les tests avec couverture
         run: npm test
