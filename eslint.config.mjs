@@ -1,17 +1,13 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-
-/** @type {import('eslint').Linter.Config[]} */
+// eslint.config.mjs
 export default [
-  {
-    files: ["**/*.js"],
-    languageOptions: { 
-      sourceType: "commonjs", // Ajoute ceci pour CommonJS (require/module.exports)
-      globals: {
-        ...globals.node,      // Ajoute ceci pour reconnaître 'module', 'require', etc.
-        ...globals.jest       // Optionnel : pour que ESLint reconnaisse 'test' et 'expect'
-      } 
-    }
-  },
-  pluginJs.configs.recommended,
+{
+files: ['src/**/*.js'],
+rules: {
+'no-unused-vars': 'warn',
+'no-console': 'warn',
+'eqeqeq': 'error',
+'no-var': 'error',
+'prefer-const': 'warn',
+},
+},
 ];
